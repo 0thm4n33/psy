@@ -119,7 +119,4 @@ exports.login = async (user) =>{
 const getResults = async (target) => {
     console.log(target);
     return await fetch(target);     
-};
-
-
-export default API_ADDRESS;
+};  
