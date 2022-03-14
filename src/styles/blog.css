@@ -1,0 +1,18 @@
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.first{
+    width: 100%;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 8px;
+}
+
+.first-text{
+    background-color: transparent;
+    text-align: center;
+    font-weight: bold;
+    padding: 8px;
+}

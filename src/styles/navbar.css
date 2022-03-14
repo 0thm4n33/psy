@@ -1,0 +1,15 @@
+.menu > a{
+    margin: 9px;
+    border: 3px;
+    color: black;
+    font-size: 18px;
+    font-family: Poppins;
+}
+.menu > a:hover{
+    cursor: pointer;
+    transition: 0.5s;
+    color: red;
+}
+.menu{
+    margin: 10px;
+}

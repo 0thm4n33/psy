@@ -1,0 +1,54 @@
+.auth-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 500px;
+    margin: 35px;
+}
+
+.auth-email,.auth-password,.auth-connect{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+    font-family: 'Poppins';
+    color: #282828BF;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.auth-email,.auth-password,.auth-connect{
+    width: 80%;
+}
+.auth-email,.auth-password{
+    height: 60px;
+    background-color: #0000000D;
+}
+
+.auth-connect {
+    text-align: center;
+    background-color: #2d97959d;
+    cursor: pointer;
+}
+
+.auth-connect:hover {
+    background-color: #12aa9de3;
+    color: white;
+}
+
+.auth-connect > input[type=submit]{
+    background: none;
+    color: #0b4948;
+    cursor: pointer;
+}
+
+.auth-connect:hover > input[type=submit]{
+    color: white;
+}
+
+.auth-connect > input[type=submit]{
+    font-family: 'Poppins';
+    background: none;
+    border: none;
+}

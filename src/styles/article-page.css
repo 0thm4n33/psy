@@ -1,0 +1,18 @@
+.post-content{
+    width: 75%;
+    border: none;
+    font-family: 'Poppins';
+    padding-top: 15px;
+}
+
+.post-body{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.post-image{
+    padding-bottom: 8px;
+    width: 82%;
+}

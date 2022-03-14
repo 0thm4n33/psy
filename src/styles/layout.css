@@ -1,0 +1,26 @@
+.root{
+    display: flex;
+}
+
+.page{
+    width: 100%;
+    height: 100%;
+    background-color: #0000000D;
+    padding: 15px;
+}
+
+.side-menu{
+    width: 190px;
+}
+
+.searchwrapper{
+    background-color: white;
+    border-radius: 30px;
+    padding: 5px;
+    margin: 8px;
+}
+
+.main-logo{
+    max-width: 100px;
+    padding: 20px;
+}

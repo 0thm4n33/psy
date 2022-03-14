@@ -1,0 +1,26 @@
+.searchwrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    width: 89%;
+}
+.searchwrapper > input[type=text]{
+    border: none;
+    width: 90%;
+    padding: 12px;
+    text-align: start;
+    border-radius: 28px;
+    background-color: white;
+}
+.icon{
+    border-radius: 55%;
+    width: 16%;
+    background-color: #73d6d5;
+    text-align: center;
+}
+
+.icon:hover{
+    background-color: red;
+    transition: 1s;
+}

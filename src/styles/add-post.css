@@ -1,0 +1,65 @@
+.post-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.table{
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 100%;
+    padding: 10px;
+}
+
+.label,h2{
+    font-family: Poppins;
+    padding: 14px;
+}
+
+td > input[type=text],input[type=file],.content,select{
+    border-radius: 20px;
+    border: 0.1px solid black;
+    padding: 5px;
+    padding-left: 10px;
+}
+
+input[type=file]{
+    background-color: white;
+}
+
+
+.submit{
+    text-align: right;
+    margin-top: 10px;
+}
+.submit > input[type=submit]{
+    color: black;
+    font-weight: bold;
+    font-family: 'Poppins';
+    border: none;
+    font-size:large;
+    padding: 15px;
+}
+
+.submit > input[type=submit]:hover{
+    cursor: pointer;
+    background-color: white;
+    transition: 0.5s ease;
+}
+
+td > input[type=text],select{
+    height: 30px;
+}
+
+select{
+    width: 180px;
+}
+
+.form-wrapper{
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,42 @@
+.box,.active{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 150px;
+    border-radius: 25% 10%;
+    margin: 15px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
+
+.box{
+    background-color: #0000000D;
+}
+
+.active, .active > a{
+    background:#2D97951A;
+}
+
+.box > a{
+    color: #282828BF;
+}
+
+.active > a{
+    color: #2D9795;
+}
+
+.box > a , .active > a{
+    font: 10px Poppins;
+    font-weight: bold;
+    text-decoration: none;
+    background: none;
+}
+
+.box:hover{
+    background-color:#73d6d5;
+    transition: 1s ;
+}
+
