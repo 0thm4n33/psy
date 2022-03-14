@@ -1,7 +1,6 @@
 import React from "react";
 import { List, Toolbar, Drawer} from '@material-ui/core';
 import SideBar from "./sideBar";
-import { styled } from "@mui/material/styles";
 import '../styles/layout.css';
 import { useLocation } from "react-router-dom";
 import logo from '../assets/images/274697502_370553091282912_6384957551422282258_n.jpg';
