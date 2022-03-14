@@ -121,3 +121,5 @@ const getResults = async (target) => {
     return await fetch(target);     
 };
 
+
+export default API_ADDRESS;
