@@ -14,7 +14,6 @@ const boxesAdmin = [
         {'text':'logout','url':'/blog'}
     ];
 export default class Service {
-    
     static getPosts = async () => {
         const result = await Service.getResults(API_ADDRESS+'/blog');
         return result.json();
