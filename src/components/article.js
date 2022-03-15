@@ -31,7 +31,7 @@ export default class ArticleComponent extends React.Component{
            margin: 5px;
        `;
         return(
-            <Grid key={this.props.a.title} item xs={12} md={4} lg={4}>
+            <Grid key={this.props.a.title} item xs={12} md={4} lg={4} className="grid">
                 <div>
                     <CustomizedCard>
                         <CardActionArea >
