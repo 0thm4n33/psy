@@ -18,6 +18,7 @@ function App() {
                     <Route path="/admin/connexion" element={<AuthenticationPage />}/>
                     <Route path="/conntactez-nous" element={<ConntactUsPage />}/>
                     <Route path="/blog/:category/:title" element={<ArticlePage />}/>
+                    <Route path="/:category/:title" element={<ArticlePage />}/>
                     <Route path='/admin/post' element={
                       <RequiredAuth>
                           <AddPost/>

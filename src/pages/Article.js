@@ -14,6 +14,7 @@ function ArticlePage(){
     useEffect(()=>{
         async function fecthArticle(){
             const post = await service.getOnePost(title);
+            console.log('post content: '+post.content);
             service.getContentXML(post.content,(result)=>{
                 let postContent = document.getElementById('post-content');
                 if(postContent !== null) postContent.appendChild(result);
