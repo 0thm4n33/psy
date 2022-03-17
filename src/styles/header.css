@@ -19,7 +19,8 @@
 }
 
 .subtitle{
-    width: 55%;
+    width: 58%;
+    height: 50%;
     font-family: Poppins;
     font-weight: lighter;
     text-align: center;
@@ -28,11 +29,14 @@
 }
 
 .sub-header{
-    display: flex;
-    justify-content: space-between;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
-    margin: 5px;
+    gap: 35%;
 }
+
 
 .center{
     padding: 10px;

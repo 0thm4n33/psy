@@ -31,41 +31,41 @@ export default class ArticleComponent extends React.Component{
            margin: 5px;
        `;
         return(
-            <Grid key={this.props.a.title} item xs={12} md={4} lg={4}>
-                <div>
-                    <CustomizedCard>
-                        <CardActionArea >
-                            <CardMedia 
-                                component="img"
-                                height="190"
-                                alt={this.props.a.title}
-                                image={this.props.a.imageUrl}
-                            />
-                            <CardContent>
-                                <div className="card-title">
-                                    {this.props.a.title.split('_').join(' ')}
-                                </div>
-                                <Typography variant="body2" color="textSecondary">
-                                    {this.props.a.subtitle}
-                                </Typography>
-                            </CardContent>
-                            <CardActions>
-                                <button className="card-button" onClick={this.handleOnClick}>
-                                    <ArrowForwardIos fontSize="small"/>
-                                    <Link to={{
-                                        pathname: `${this.props.title}`,
-                                        state:{
-                                            article: true
-                                        }
-                                    }}>
-                                        Lire l'article
-                                    </Link>
-                                </button>
-                            </CardActions>
-                        </CardActionArea>
-                    </CustomizedCard> 
-            </div>
-        </Grid>
+                <Grid key={this.props.a.title} item xs={12} md={4} lg={4} className="grid">
+                    <div>
+                        <CustomizedCard>
+                            <CardActionArea >
+                                <CardMedia 
+                                    component="img"
+                                    height="190"
+                                    alt={this.props.a.title}
+                                    image={this.props.a.imageUrl}
+                                />
+                                <CardContent>
+                                    <div className="card-title">
+                                        {this.props.a.title.split('_').join(' ')}
+                                    </div>
+                                    <Typography variant="body2" color="textSecondary">
+                                        {this.props.a.subtitle}
+                                    </Typography>
+                                </CardContent>
+                                <CardActions>
+                                    <button className="card-button" onClick={this.handleOnClick}>
+                                        <ArrowForwardIos fontSize="small"/>
+                                        <Link to={{
+                                            pathname: `${this.props.title}`,
+                                            state:{
+                                                article: true
+                                            }
+                                        }}>
+                                            Lire l'article
+                                        </Link>
+                                    </button>
+                                </CardActions>
+                            </CardActionArea>
+                        </CustomizedCard> 
+                </div>
+            </Grid>
         )
     }
 }

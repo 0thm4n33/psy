@@ -1,8 +1,8 @@
 const PROTOCOLE = 'https';
-const ADDRESS = 'backend-red.vercel.app';
+const ADDRESS = 'backend-flax-rho.vercel.app';
 //const PORT = '3030';
 const API_ADDRESS = PROTOCOLE+'://'+ADDRESS;
-const EXTENSION_CONTENT = "html";
+const EXTENSION_CONTENT = "txt";
 var authenticated = false;
 const boxes = [
         {'text':'blog','url':'/blog',},

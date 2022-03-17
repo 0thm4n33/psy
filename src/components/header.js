@@ -6,7 +6,9 @@ export default class Header extends React.Component{
         return(
             <div>
                 <div className="header">
-                    <h1 className="title">{this.props.title}</h1>
+                    <h1 className="title">
+                        {this.props.title}
+                    </h1>
                     <h4 className="subtitle">
                        {this.props.subtitle}
                     </h4>

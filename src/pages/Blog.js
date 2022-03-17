@@ -27,9 +27,9 @@ export default class BlogPage extends React.Component {
         return(
             <div className="blog-wrapper">
                 <Header 
-                title={"Blog Psy En Ligne"} 
-                subtitle={"Retrouvez tous nos articles de psychologie sur notre blog. Votre bien-Être est entre de bonnes mains"}
-                >
+                    title={"Blog Psy En Ligne"} 
+                    subtitle={"Retrouvez tous nos articles de psychologie sur notre blog. Votre bien-Être est entre de bonnes mains"}
+                    >
                      <NavBar /> 
                     <SearchBar />
                 </Header>
