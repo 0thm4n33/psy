@@ -31,7 +31,6 @@ export default class ArticleComponent extends React.Component{
            margin: 5px;
        `;
         return(
-<<<<<<< HEAD
                 <Grid key={this.props.a.title} item xs={12} md={4} lg={4} className="grid">
                     <div>
                         <CustomizedCard>
@@ -67,43 +66,6 @@ export default class ArticleComponent extends React.Component{
                         </CustomizedCard> 
                 </div>
             </Grid>
-=======
-            <Grid key={this.props.a.title} item xs={12} md={4} lg={4} className="grid">
-                <div>
-                    <CustomizedCard>
-                        <CardActionArea >
-                            <CardMedia 
-                                component="img"
-                                height="190"
-                                alt={this.props.a.title}
-                                image={this.props.a.imageUrl}
-                            />
-                            <CardContent>
-                                <div className="card-title">
-                                    {this.props.a.title.split('_').join(' ')}
-                                </div>
-                                <Typography variant="body2" color="textSecondary">
-                                    {this.props.a.subtitle}
-                                </Typography>
-                            </CardContent>
-                            <CardActions>
-                                <button className="card-button" onClick={this.handleOnClick}>
-                                    <ArrowForwardIos fontSize="small"/>
-                                    <Link to={{
-                                        pathname: `${this.props.title}`,
-                                        state:{
-                                            article: true
-                                        }
-                                    }}>
-                                        Lire l'article
-                                    </Link>
-                                </button>
-                            </CardActions>
-                        </CardActionArea>
-                    </CustomizedCard> 
-            </div>
-        </Grid>
->>>>>>> b80222eb7d3ca4a152b1455e72a21f676534894a
         )
     }
 }
