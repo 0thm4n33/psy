@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom";
 import logo from '../assets/images/274697502_370553091282912_6384957551422282258_n.jpg';
 import service from '../services/index';
 
-const drawerWidth = 180;
+const drawerWidth = 190;
 
 export default class Layout extends React.Component {
     
@@ -35,7 +35,7 @@ export default class Layout extends React.Component {
         return(
             <div>
                 <Toolbar >
-                    <img src={logo} alt="Psy en ligne" className="main-logo"/>
+                    <img src={logo} alt="Psy en ligne" className="main-logo" />
                 </Toolbar>
                 <div className="boxes">
                     <List >
@@ -57,7 +57,7 @@ export default class Layout extends React.Component {
                     <IconButton 
                         onClick={this.handlerOpen}
                         edge="start"
-                        sx={{display:{sm:'none'}}}
+                        sx={{display:{lg:'none',md:'block'}}}
                     >
                         <Menu/>
                     </IconButton>
@@ -66,7 +66,7 @@ export default class Layout extends React.Component {
                         <Drawer 
                             variant="permanent"
                             sx={{
-                                display: { xs: 'none', sm: 'block' },
+                                display: { xs:'none',md: 'none',lg: 'block' },
                                 '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
                             }}>
                                 {this.items()}
@@ -76,7 +76,7 @@ export default class Layout extends React.Component {
                             open={this.state.mobileOpen}
                             onClick={this.handlerOpen}
                             sx={{
-                                display:{sm:'none',xs:'inline'}
+                                display:{sm:'none',md:'block',xs:'block'}
                             }}>
                                 {this.items()}
                             </Drawer>

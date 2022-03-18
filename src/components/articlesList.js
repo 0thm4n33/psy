@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import React from "react";
 import ArticleComponent from "./article";
-import FirstArticle from "./mainArticle";
+
 export default class ArticleList extends React.Component{
 
     render(){
@@ -13,8 +13,7 @@ export default class ArticleList extends React.Component{
         if(this.props.posts !== null){
             this.props.posts.forEach((a,index)=>{
                 const title = a.category+'/'+a.postUrl;
-                index === 0 ? articles.push(<FirstArticle article={a} title={title}/>) :
-                 articles.push(<ArticleComponent a={a} title={title}/>)
+                 articles.push(<ArticleComponent a={a} title={title} index={index}/>)
             });
             return(
                 <div className="list">

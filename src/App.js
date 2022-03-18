@@ -7,6 +7,7 @@ import ConntactUsPage from './pages/ConnatactUs';
 import ArticlePage from './pages/Article';
 import AddPost from './pages/AddPost';
 import RequiredAuth from './components/requiredAuth';
+import PostAdmin from './admin/page/Posts';
 function App() {
   return (
     <div className="App">
@@ -24,6 +25,11 @@ function App() {
                           <AddPost/>
                         </RequiredAuth>
                       }/>
+                    <Route path="/admin/AllPosts" element={
+                      <RequiredAuth>
+                        <PostAdmin />
+                      </RequiredAuth>
+                    }/>
                   </Routes>
               </Layout>
       </Router>

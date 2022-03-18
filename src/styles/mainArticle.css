@@ -1,0 +1,26 @@
+.card-title{
+    display: "flex";
+        flex-direction:"column";
+        position:"absolute";
+        top: "50%";
+        background-color: "none";
+        width: "100%";
+        text-align:"center";
+        color: "white"
+}
+.card-subtitle{
+        color:"#bdd4e7";
+        font-family: 'Poppins'
+    };
+.card-button{
+       background: "none";
+       color:"white";
+       border:"none";
+       padding: "4px"
+   };
+a{
+    color:"white"
+   };
+.imageContainer{
+       width: "100%"
+   }

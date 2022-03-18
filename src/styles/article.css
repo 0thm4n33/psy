@@ -1,11 +1,12 @@
 .card-title{
     font-weight: bold;
-    font-size: large;
+    font-size: medium;
     font-family: 'Poppins';
-    width: 80%;
+    width: 90%;
     padding: 3px;
     margin: 3px;
 }
+
 .card-button{
     display: flex;
     flex-direction: row-reverse;
@@ -15,9 +16,22 @@
     color: gray;
     width: 100%;
 }
+
+.card-subtitle{
+    color: gray;
+    font-family: 'Poppins';
+    font-weight: bold;
+    width: 70%;
+}
+
 .card-button > a{
     font-size: small;
     font-weight: bold;
     padding: 2px;
     color : #282828BF
+}
+
+.admin-panel{
+    width: 100%;
+    text-align: right;
 }

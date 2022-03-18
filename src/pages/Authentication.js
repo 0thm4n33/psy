@@ -56,7 +56,7 @@ export default class AuthenticationPage extends React.Component{
         return(
             <div>
                 {user && (
-                    <Navigate to="/admin/post" replace={true} />
+                    <Navigate to="/admin/AllPosts" replace={true} />
                 )}
                 <div className="auth-body">
                     <form onSubmit={this.handleOnSubmit}>

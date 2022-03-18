@@ -10,8 +10,10 @@
 
 .button-panel{
     text-align: left;
-    padding: 2px;
+    padding: 5px;
+    font-weight: bold;
 }
+
 .searchwrapper{
     background-color: white;
     border-radius: 20px;
