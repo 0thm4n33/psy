@@ -3,7 +3,6 @@ const ADDRESS = 'backend-flax-rho.vercel.app';
 //const PORT = '3030';
 const API_ADDRESS = PROTOCOLE+'://'+ADDRESS;
 const EXTENSION_CONTENT = "txt";
-var authenticated = false;
 const boxes = [
         {'text':'blog','url':'/blog',},
         {'text':'conntactez-nous','url' : '/conntactez-nous',},
@@ -14,25 +13,42 @@ const boxesAdmin = [
         {'text':'logout','url':'/blog'}
     ];
 export default class Service {
+
+    static setAuthenticated(){
+       localStorage.setItem('auth',true);
+    }
+
+    static isAuthenticated(){
+        let value = localStorage.getItem('auth');
+        console.log('value: '+value);
+        return value;
+    }
+
+    static disconnect(){
+        localStorage.removeItem('auth');
+    }
+
     static getPosts = async () => {
         const result = await Service.getResults(API_ADDRESS+'/blog');
         return result.json();
     };
     
     static getBoxes = () =>{
-        if(this.isAuthenticated()){
+        console.log('get boxes ... ')
+        if(this.isAuthenticated() === 'true'){
             return boxesAdmin;
         }
         return boxes;
     }
     
+    /*
     static setIsAuthenticated = (value) =>{
         authenticated = value;
     }
     
     static isAuthenticated = () =>{
         return authenticated;
-    }
+    }*/
     
     static getContent =  async (contentUrl) =>{
         const content = await Service.getResults(contentUrl+"."+EXTENSION_CONTENT);

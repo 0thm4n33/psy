@@ -89,6 +89,7 @@ export default class ArticleComponent extends React.Component{
               <this.functionalRender />
         )
     }
+    
     functionalRender = () =>{
        const md = this.props.index === 0 ? 12 : 4;
        const height = this.props.index === 0 ? "400" : "190";
@@ -136,8 +137,8 @@ export default class ArticleComponent extends React.Component{
                                 </CardContent>
                             }
                             <CardActions>
-                                {service.isAuthenticated() === false ? 
-                                    this.clientPanel() : this.adminPanel()
+                                {service.isAuthenticated() === 'true' ? 
+                                    this.adminPanel() : this.clientPanel()
                                 }
                             </CardActions>
                         </CardActionArea>

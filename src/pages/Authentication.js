@@ -41,7 +41,10 @@ export default class AuthenticationPage extends React.Component{
                 this.setState({
                     user: user
                 })
-                service.setIsAuthenticated(true);
+                if(this.props.service !== undefined){
+                    console.log('user authenticated .... ');
+                    this.props.service.setAuthenticated(true);
+                } 
             }
             else if(response.status === 404){
                 alert('email or password are incorrect');
@@ -55,7 +58,8 @@ export default class AuthenticationPage extends React.Component{
         let {user} = this.state;
         return(
             <div>
-                {user && (
+                {
+                    user && (
                     <Navigate to="/admin/AllPosts" replace={true} />
                 )}
                 <div className="auth-body">
