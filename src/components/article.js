@@ -1,13 +1,14 @@
 import { Card, CardActionArea, CardActions, CardContent, CardMedia,  Grid,  Typography } from "@material-ui/core";
-import { Stack } from "@mui/material";
+import { Button, Stack } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { Delete,Create } from "@material-ui/icons";
+import { Create } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core";
 import {ArrowForwardIos} from '@material-ui/icons';
 import React from "react";
 import "../styles/article.css";
 import { Link } from "react-router-dom";
 import service from '../services/index';
+import DeleteComponenet from "../admin/components/delete";
 
 const useStyle = makeStyles(theme =>({
     title:{
@@ -78,27 +79,19 @@ export default class ArticleComponent extends React.Component{
     adminPanel = () =>{
         return(
             <Stack direction="row" justifyContent="flex-end" width="100%">
-                  <div className="card-button-modify">
+                  <Button className="card-button-modify">
                     <Link to={{
                         pathname: `/admin/editPost/${this.props.title}`,
                             state:{
                             article: true
                                         }
-                                    }}> 
+                                    }}>     
                                     {`Modifier`}
                     </Link>
                     <Create fontSize="small"/>
-                </div>
+                </Button>
                 <div className="card-button-delete">
-                    <Link to={{
-                        pathname: `${this.props.title}`,
-                            state:{
-                            article: true
-                                        }
-                                    }}>
-                                    {'Supprimer'}
-                    </Link>
-                    <Delete fontSize="small"/>
+                  <DeleteComponenet post={this.props.a} />
                 </div>
             </Stack>
         )

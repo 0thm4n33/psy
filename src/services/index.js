@@ -93,6 +93,12 @@ export default class Service {
         const post = await Service.getResults(API_ADDRESS+'/blog/'+title);
         return post.json();
     }
+
+    static deleteOnePost = (title) =>{
+        return fetch(API_ADDRESS+'/blog/'+title,{
+            method: 'DELETE'
+        });
+    }
     
     static getAPI = () => {
         return API_ADDRESS;
@@ -122,6 +128,7 @@ export default class Service {
             body: userObject
         });
     }
+
     
     static getResults = async (target) => {
         console.log(target);
