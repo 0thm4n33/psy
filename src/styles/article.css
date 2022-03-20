@@ -7,14 +7,25 @@
     margin: 3px;
 }
 
-.card-button{
+.card-button,.card-button-delete,.card-button-modify{
     display: flex;
     flex-direction: row-reverse;
-    background-color: white;
     border: none;
-    text-align: end;
     color: gray;
+    padding: 5px;
+}
+
+.card-button{
     width: 100%;
+    align-items: flex-end;
+}
+
+.card-button-delete,.card-button-delete > a {
+    color: red;
+}
+
+.card-button-modify,.card-button-modify > a {
+    color: blue;
 }
 
 .card-subtitle{
@@ -24,14 +35,19 @@
     width: 70%;
 }
 
-.card-button > a{
+.card-button > a, .card-button-delete > a,.card-button-modify > a{
     font-size: small;
     font-weight: bold;
     padding: 2px;
+}
+.card-button > a{
     color : #282828BF
 }
-
-.admin-panel{
-    width: 100%;
-    text-align: right;
+.panel-admin{
+    background-color: none;
+    color: black;
+}
+.image-preview{
+    width: 30%;
+    height: 30%;
 }

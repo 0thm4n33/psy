@@ -9,6 +9,7 @@ import AddPost from './pages/AddPost';
 import RequiredAuth from './components/requiredAuth';
 import PostAdmin from './admin/page/Posts';
 import service from './services';
+import EditPost from './admin/page/EditPost';
 
 function App() {
   return (
@@ -32,6 +33,11 @@ function App() {
                         <PostAdmin />
                       </RequiredAuth>
                     }/>
+                    <Route path="/admin/editPost/:category/:title" element={
+                      <RequiredAuth service={service}>
+                        <EditPost />
+                      </RequiredAuth>
+                      }/>
                   </Routes>
               </Layout>
       </Router>

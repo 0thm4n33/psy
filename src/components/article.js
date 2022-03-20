@@ -1,5 +1,5 @@
 import { Card, CardActionArea, CardActions, CardContent, CardMedia,  Grid,  Typography } from "@material-ui/core";
-import { Button } from "@mui/material";
+import { Stack } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Delete,Create } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core";
@@ -28,7 +28,6 @@ const useStyle = makeStyles(theme =>({
        display:"flex",
        background: "none",
        backgroundColor:"none",
-       color:"white",
        border:"none",
        padding: "4px",
        position:"absolute",
@@ -58,11 +57,12 @@ export default class ArticleComponent extends React.Component{
     }
 
     handleOnClick(event){
+
     }
 
     clientPanel = () => {
         return(
-            <div className={this.props.index === 0 ? useStyle().button : "card-button"} onClick={this.handleOnClick}>
+            <div className="card-button" onClick={this.handleOnClick}>
                 <ArrowForwardIos fontSize="small"/>
                 <Link to={{
                     pathname: `${this.props.title}`,
@@ -77,10 +77,30 @@ export default class ArticleComponent extends React.Component{
 
     adminPanel = () =>{
         return(
-            <div className="admin-panel">
-                <Button startIcon={<Create />}>Modifier</Button>
-                <Button startIcon={<Delete />}>Supprimer</Button>
-            </div>
+            <Stack direction="row" justifyContent="flex-end" width="100%">
+                  <div className="card-button-modify">
+                    <Link to={{
+                        pathname: `/admin/editPost/${this.props.title}`,
+                            state:{
+                            article: true
+                                        }
+                                    }}> 
+                                    {`Modifier`}
+                    </Link>
+                    <Create fontSize="small"/>
+                </div>
+                <div className="card-button-delete">
+                    <Link to={{
+                        pathname: `${this.props.title}`,
+                            state:{
+                            article: true
+                                        }
+                                    }}>
+                                    {'Supprimer'}
+                    </Link>
+                    <Delete fontSize="small"/>
+                </div>
+            </Stack>
         )
     }
 
@@ -89,18 +109,16 @@ export default class ArticleComponent extends React.Component{
               <this.functionalRender />
         )
     }
-    
+
     functionalRender = () =>{
        const md = this.props.index === 0 ? 12 : 4;
        const height = this.props.index === 0 ? "400" : "190";
        const CustomizedCard = styled(Card)`
-           border-radius: 20px;
            width: 100%;
-           margin: 5px;
+           backgroundColor:"none";
        `;
         return(
             <Grid key={this.props.a.title} item xs={12} md={md} className="grid">
-                <div>
                     <CustomizedCard>
                         <CardActionArea >
                             <div className={this.props.index === 0 ? useStyle().imageContainer : ""}>
@@ -143,7 +161,6 @@ export default class ArticleComponent extends React.Component{
                             </CardActions>
                         </CardActionArea>
                     </CustomizedCard> 
-            </div>
         </Grid>
         )
     }

@@ -41,15 +41,6 @@ export default class Service {
         return boxes;
     }
     
-    /*
-    static setIsAuthenticated = (value) =>{
-        authenticated = value;
-    }
-    
-    static isAuthenticated = () =>{
-        return authenticated;
-    }*/
-    
     static getContent =  async (contentUrl) =>{
         const content = await Service.getResults(contentUrl+"."+EXTENSION_CONTENT);
         const reader = content.body.getReader();

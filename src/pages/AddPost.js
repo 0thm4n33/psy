@@ -5,17 +5,21 @@ export default class AddPost extends React.Component{
     
     constructor(props){
         super(props);
+        if(this.props.post !== undefined){
+            console.log(`post: ${this.props.post}`);
+        }
         this.state = {
             categories : [],
-            title: '',
-            subtitle: '',
+            title: this.props.post === undefined ? '' : this.props.post.title.split('_').join(' '),
+            subtitle: this.props.post === undefined ? '' : this.props.post.subtitle,
             category: '',
-            content: '',
-            image: ''
+            content: this.props.post === undefined ? '' : this.getContent(this.props.post.content),
+            image: this.props.post === undefined ? '' : this.props.post.imageUrl
         };
         this.image = React.createRef();
         this.handleOnChange = this.handleOnChange.bind(this);
         this.handleOnSubmit = this.handleOnSubmit.bind(this);
+        this.getContent = this.getContent.bind(this);
     }
 
     handleOnChange(event){
@@ -24,6 +28,16 @@ export default class AddPost extends React.Component{
         this.setState({
             [name]: value
         });
+    }
+
+    getContent(url){
+        service.getContent(url).then(data => {
+            this.setState({
+                content: data
+            })
+        }).catch(error =>{
+            console.log(`error while fetching content: ${error}`);
+        })
     }
 
     handleOnSubmit(event){
@@ -49,9 +63,10 @@ export default class AddPost extends React.Component{
     }
 
     render(){
+        console.log(`rendering ... ${this.state.image}`);
         return(
           <div className="post-wrapper">
-                <h2>Nouveau post</h2>
+                <h2>{this.props.post === undefined ? "Nouveau post" : "Modifier post"}</h2>
                 <form onSubmit={this.handleOnSubmit}>
                   <table className="table">
                       <tr>
@@ -103,6 +118,14 @@ export default class AddPost extends React.Component{
                               <input type="file" ref={this.image} name="image"/>
                           </td>
                       </tr>
+                      {this.props.post !== undefined && 
+                            <tr>
+                              <td className="label">Image preview</td>
+                              <td >
+                                <img src={this.props.post.imageUrl} alt={this.props.post.title} className="image-preview" />
+                              </td>
+                          </tr>
+                          }
                       <tr>
                           <td className="label">Contenu</td>
                           <td>
