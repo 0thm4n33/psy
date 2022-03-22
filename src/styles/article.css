@@ -2,7 +2,7 @@
     font-weight: bold;
     font-size: medium;
     font-family: 'Poppins';
-    width: 90%;
+    width: 100%;
     padding: 3px;
     margin: 3px;
 }
@@ -32,7 +32,7 @@
     color: gray;
     font-family: 'Poppins';
     font-weight: bold;
-    width: 70%;
+    width: 100%;
 }
 
 .card-button > a, .card-button-delete > a,.card-button-modify > a{
@@ -40,13 +40,16 @@
     font-weight: bold;
     padding: 2px;
 }
+
 .card-button > a{
     color : #282828BF
 }
+
 .panel-admin{
     background-color: none;
     color: black;
 }
+
 .image-preview{
     width: 30%;
     height: 30%;

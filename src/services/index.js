@@ -1,5 +1,6 @@
 const PROTOCOLE = 'https';
 const ADDRESS = 'backend-flax-rho.vercel.app';
+//const ADDRESS = 'localhost';
 //const PORT = '3030';
 const API_ADDRESS = PROTOCOLE+'://'+ADDRESS;
 const EXTENSION_CONTENT = "txt";
@@ -94,9 +95,9 @@ export default class Service {
         return post.json();
     }
 
-    static deleteOnePost = (title) =>{
-        return fetch(API_ADDRESS+'/blog/'+title,{
-            method: 'DELETE'
+    static deleteOnePost = (id) =>{
+        return fetch(API_ADDRESS+'/blog/'+id,{
+            method: 'DELETE',
         });
     }
     
@@ -104,20 +105,17 @@ export default class Service {
         return API_ADDRESS;
     };
     
-    static addPosts = (post,image) => {
+    static addPosts = (post,image,method) => {
+        const address = method === 'POST' ? API_ADDRESS+'/blog' : API_ADDRESS+'/blog/'+post._id;
         let postObject = JSON.stringify(post);
-        console.log('PostObject : '+JSON.stringify(post));
+        console.log(`post: ${postObject}`);
         let formData = new FormData();
         formData.append('image',image);
         formData.append('post',postObject);
-        fetch(API_ADDRESS+'/blog',{
-            method: 'POST',
+        return fetch(address,{
+            method: method,
             body: formData
-        }).then((response)=>{
-            console.log('post added ',response)
-        }).catch(error=>{
-            console.log('error while adding post '+error);
-        });
+        })
     }
     
     static login = async (user) =>{

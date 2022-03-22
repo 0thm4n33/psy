@@ -107,13 +107,13 @@ export default class ArticleComponent extends React.Component{
        const md = this.props.index === 0 ? 12 : 4;
        const height = this.props.index === 0 ? "400" : "190";
        const CustomizedCard = styled(Card)`
-           width: 100%;
-           backgroundColor:"none";
+           width:100%;
+           height: 100%;
        `;
         return(
             <Grid key={this.props.a.title} item xs={12} md={md} className="grid">
-                    <CustomizedCard>
-                        <CardActionArea >
+                    <CustomizedCard sx={{borderRadius:30}}>
+                        <CardActionArea>
                             <div className={this.props.index === 0 ? useStyle().imageContainer : ""}>
                                 <CardMedia 
                                     component="img"

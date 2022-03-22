@@ -19,7 +19,7 @@ export default class BlogPage extends React.Component {
         const postResult = await serivces.getPosts();
         console.log(postResult);
         this.setState({
-            posts: postResult.posts
+            posts: postResult.posts.reverse()
         })
     }
 

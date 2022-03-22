@@ -16,7 +16,7 @@ export default class ArticleList extends React.Component{
                  articles.push(<ArticleComponent a={a} title={title} index={index}/>)
             });
             return(
-                <div className="list">
+                <div>
                     <Grid container>
                         {articles}
                     </Grid>
