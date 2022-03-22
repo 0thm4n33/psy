@@ -128,7 +128,7 @@ export default class ArticleComponent extends React.Component{
                                         variant="h4"
                                         component="h4"
                                     >
-                                        {this.props.a.subtitle}
+                                        {this.props.a.title.split('_').join(' ')}
                                     </Typography>
                                     <Typography
                                         variant="h6"
