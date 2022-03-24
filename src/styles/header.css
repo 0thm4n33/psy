@@ -12,14 +12,13 @@
 .title{
     font-family: "Poppins";
     font-weight: bold;
-    width: 70%;
     text-align: center;
     padding-top: 15px;
     margin-bottom: 15px;
 }
 
 .subtitle{
-    width: 58%;
+    width: 55%;
     height: 50%;
     font-family: Poppins;
     font-weight: lighter;

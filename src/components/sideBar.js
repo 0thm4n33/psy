@@ -1,13 +1,15 @@
 import React from "react";
 import '../styles/sideBar.css';
-import {DescriptionOutlined,EmailOutlined,Add,Input,ExitToApp} from '@material-ui/icons';
+import {DescriptionOutlined,EmailOutlined,NoteAddOutlined,Input,ExitToApp,PersonAddOutlined,CategoryOutlined} from '@material-ui/icons';
 import service from "../services";
 const logos = {
     'blog': <DescriptionOutlined/>,
     'conntactez-nous': <EmailOutlined />,
     'connexion': <Input/>,
-    'post':<Add />,
-    'logout': <ExitToApp />
+    'posts':<NoteAddOutlined />,
+    'logout': <ExitToApp />,
+    'utilisateurs':<PersonAddOutlined />,
+    'categories':<CategoryOutlined />
 }
 
 export default class SideBar extends React.Component{

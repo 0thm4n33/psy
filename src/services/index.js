@@ -2,7 +2,7 @@ const PROTOCOLE = 'https';
 const ADDRESS = 'backend-flax-rho.vercel.app';
 //const ADDRESS = 'localhost';
 //const PORT = '3030';
-const API_ADDRESS = PROTOCOLE+'://'+ADDRESS;
+const API_ADDRESS = `${PROTOCOLE}://${ADDRESS}`;
 const EXTENSION_CONTENT = "txt";
 const boxes = [
         {'text':'blog','url':'/blog',},
@@ -10,7 +10,9 @@ const boxes = [
         {'text':'connexion','url' : '/admin/connexion',}
     ];
 const boxesAdmin = [
-        {'text':'post','url':'/admin/post'},
+        {'text':'posts','url':'/admin/posts'},
+        {'text':'categories','url':'/admin/categories'},
+        {'text':'utilisateurs','url':'/admin/users'},
         {'text':'logout','url':'/blog'}
     ];
 export default class Service {
@@ -33,6 +35,11 @@ export default class Service {
         const result = await Service.getResults(API_ADDRESS+'/blog');
         return result.json();
     };
+
+    static getCategories = async () =>{
+        const result = await this.getResults(API_ADDRESS+'/blog/category');
+        return result.json();
+    }
     
     static getBoxes = () =>{
         console.log('get boxes ... ')
@@ -84,11 +91,6 @@ export default class Service {
         }
         rawFile.send(null);
     }
-    
-    static getCategories = async () => {
-        const result = await Service.getResults(API_ADDRESS+'/blog/category');
-        return result.json();
-    };
     
     static getOnePost = async(title) =>{
         const post = await Service.getResults(API_ADDRESS+'/blog/'+title);

@@ -40,7 +40,7 @@ export default class Layout extends React.Component {
                 <div className="boxes">
                     <List >
                         {boxes.map((box)=>
-                            <SideBar box={box} 
+                            <SideBar key={box.text} box={box} 
                                 selected = {location.pathname.includes('/'+box.text) ? true : false}
                             />
                         )}

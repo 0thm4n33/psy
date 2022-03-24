@@ -17,7 +17,6 @@ export default class BlogPage extends React.Component {
 
     async componentDidMount(){
         const postResult = await serivces.getPosts();
-        console.log(postResult);
         this.setState({
             posts: postResult.posts.reverse()
         })
