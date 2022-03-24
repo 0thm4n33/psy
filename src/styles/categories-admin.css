@@ -1,0 +1,46 @@
+.table-wrapper{
+    padding: 10px;
+    font-family: 'Poppins';
+    text-align: center;
+}
+.category-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.category-add{
+    color: black;
+}
+.category-add:hover{
+    color: #2D9795;
+    transition: 0.5s ease;
+}
+.categories{
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 5px;
+    padding: 10px;
+}
+.category-name{
+    font-weight: bold;
+}
+tr:nth-child(even){
+    background-color: #2D9795;
+}
+thead{
+    font-family: 'Poppins';
+}
+tr,td{
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.category-link{
+    display: block;
+    padding: 5px;
+    text-align: center;
+    color: black;
+}
