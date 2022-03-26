@@ -17,7 +17,6 @@ export default function DeleteComponenet({ post }){
     }
 
     const handleDelete = () =>{
-        console.log(`url: ${post._id}`);
         service.deleteOnePost(post._id).then((res)=>{
             console.log(`result from backend: ${res.status}`);
             setOpen(false);

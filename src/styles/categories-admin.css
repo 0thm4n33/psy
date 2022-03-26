@@ -3,20 +3,27 @@
     font-family: 'Poppins';
     text-align: center;
 }
+
+.table-form{
+    border: none;
+}
+
 .category-header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
     padding: 10px;
 }
+
 .category-add{
     color: black;
 }
+
 .category-add:hover{
     color: #2D9795;
     transition: 0.5s ease;
 }
+
 .categories{
     width: 100%;
     border: 1px solid black;
@@ -24,16 +31,20 @@
     margin: 5px;
     padding: 10px;
 }
+
 .category-name{
     font-weight: bold;
 }
-tr:nth-child(even){
+
+.t-row:nth-child(even){
     background-color: #2D9795;
 }
+
 thead{
     font-family: 'Poppins';
 }
-tr,td{
+
+.t-row,.t-col{
     padding: 10px;
     border: 1px solid black;
 }
@@ -43,4 +54,22 @@ tr,td{
     padding: 5px;
     text-align: center;
     color: black;
+}
+
+.category-modal{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-category-body{
+    width: auto;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }

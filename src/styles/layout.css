@@ -29,3 +29,13 @@
     max-width: 100px;
     padding: 20px;
 }
+
+.link{
+    font-family: 'Poppins';
+    font-weight: bold;
+    color: black;
+}
+.link:hover{
+    color: #73d6d5;
+    transition: 0.4s ease;
+}

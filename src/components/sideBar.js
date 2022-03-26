@@ -7,7 +7,7 @@ const logos = {
     'conntactez-nous': <EmailOutlined />,
     'connexion': <Input/>,
     'posts':<NoteAddOutlined />,
-    'logout': <ExitToApp />,
+    'quitter': <ExitToApp />,
     'utilisateurs':<PersonAddOutlined />,
     'categories':<CategoryOutlined />
 }
@@ -15,14 +15,14 @@ const logos = {
 export default class SideBar extends React.Component{
    
     onClickHandler(event){
-        if(event.target.innerText === 'logout'){
+        if(event.target.innerText.toLowerCase() === 'quitter'){
             service.disconnect();
         }
     }
 
     render(){
         const box = this.props.box;
-        const icon = logos[box.text];
+        const icon = logos[box.text.toLowerCase()];
         return(
             <div className={this.props.selected === true ? 'active' : 'box'} >
                 <a href={box.url} onClick={this.onClickHandler}>

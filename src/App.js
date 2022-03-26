@@ -12,6 +12,7 @@ import service from './services';
 import EditPost from './admin/page/EditPost';
 import Categories from './admin/page/categories';
 import Users from './admin/page/users';
+import AddCategory from './admin/components/addCategory';
 
 function App() {
   return (
@@ -49,6 +50,11 @@ function App() {
                       <RequiredAuth service={service}>
                         <EditPost />
                       </RequiredAuth>
+                      }/>
+                      <Route path='/admin/categories/add-category' element={
+                        <RequiredAuth service={service}>
+                          <AddCategory />
+                        </RequiredAuth>
                       }/>
                   </Routes>
               </Layout>

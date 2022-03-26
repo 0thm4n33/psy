@@ -1,8 +1,8 @@
 import React from "react";
 import service from "../../services";
 import '../../styles/categories-admin.css';
-import {AddOutlined} from '@material-ui/icons'
-import {Autorenew,Remove} from '@material-ui/icons'
+import {AddOutlined, Autorenew,Remove} from '@material-ui/icons'
+import ModifyComponent from "../components/modify";
 
 export default class Categories extends React.Component{
     constructor(props){
@@ -10,11 +10,12 @@ export default class Categories extends React.Component{
         this.state = {
             categories : [],
             actions: [
-                        {'text':'modifier','url':'category/modifier','icon':<Autorenew fontSize="small"/>},
-                        {'text':'supprimer','url':'category/delete','icon':<Remove fontSize="small"/>}
+                        {'text':'modifier','icon':<Autorenew fontSize="small"/>},
+                        {'text':'supprimer','icon':<Remove fontSize="small"/>}
                     ]
         }
         this.handleOnClick = this.handleOnClick.bind(this);
+        this.getCategorys = this.getCategorys.bind(this);
     }
 
     handleOnClick(event){
@@ -23,6 +24,10 @@ export default class Categories extends React.Component{
     }
    
     componentDidMount(){
+        this.getCategorys();
+    }
+
+    getCategorys(){
         service.getCategories().then((data)=>{
             this.setState({
                 categories: data.categorys
@@ -35,7 +40,7 @@ export default class Categories extends React.Component{
             <div className="table-wrapper">
                 <div className="category-header">
                     <h3>Liste des categories</h3>
-                    <a href="add" className="category-add">
+                    <a href="/admin/categories/add-category" className="link">
                         Ajouter une categorie
                         <AddOutlined />
                     </a>
@@ -51,18 +56,19 @@ export default class Categories extends React.Component{
                     {this.state.categories !== undefined && 
                         <tbody className="body">
                             {this.state.categories.map((c)=>(
-                                <tr key={c._id}>
-                                    <td className="category-name">{c.name}</td>
-                                    <td>0</td>
-                                    <td>
-                                        {this.state.actions.map((action)=>(
-                                            <a href={action.url} key={action.text} 
-                                                id={c._id}
-                                                className="category-link"
-                                                onClick={this.handleOnClick}
-                                            >
-                                                {action.text} {action.icon}
-                                            </a>
+                                <tr key={c._id} className="t-row">
+                                    <td className="t-col">{c.name}</td>
+                                    <td className="t-col">0</td>
+                                    <td className="t-col">
+                                        {this.state.actions.map((action,index)=>(
+                                            <ModifyComponent
+                                                key={index} 
+                                                id={c._id} 
+                                                text={action.text}
+                                                icon={action.icon}   
+                                                category={c.name} 
+                                                ffive={this.getCategorys}
+                                            />
                                         ))}
                                     </td>
                                 </tr>
@@ -71,7 +77,6 @@ export default class Categories extends React.Component{
                     }
                 </table>
             </div>
-           
         )
     }
 }

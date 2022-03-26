@@ -1,6 +1,6 @@
 const PROTOCOLE = 'https';
 const ADDRESS = 'backend-flax-rho.vercel.app';
-//const ADDRESS = 'localhost';
+//const ADDRESS = 'localhost:3030';
 //const PORT = '3030';
 const API_ADDRESS = `${PROTOCOLE}://${ADDRESS}`;
 const EXTENSION_CONTENT = "txt";
@@ -10,10 +10,10 @@ const boxes = [
         {'text':'connexion','url' : '/admin/connexion',}
     ];
 const boxesAdmin = [
-        {'text':'posts','url':'/admin/posts'},
-        {'text':'categories','url':'/admin/categories'},
-        {'text':'utilisateurs','url':'/admin/users'},
-        {'text':'logout','url':'/blog'}
+        {'text':'Posts','url':'/admin/posts'},
+        {'text':'Categories','url':'/admin/categories'},
+        {'text':'Utilisateurs','url':'/admin/users'},
+        {'text':'Quitter','url':'/blog'}
     ];
 export default class Service {
 
@@ -95,6 +95,32 @@ export default class Service {
     static getOnePost = async(title) =>{
         const post = await Service.getResults(API_ADDRESS+'/blog/'+title);
         return post.json();
+    }
+
+    static udpateCategory = (category) =>{
+        const categoryObject = JSON.stringify(category);
+        return this.postFetch(`${API_ADDRESS}/blog/category/${category.id}`,'PUT',categoryObject);
+
+    }
+
+    static addCategory = (category) =>{
+        const categoryObject = JSON.stringify(category);
+        return this.postFetch(`${API_ADDRESS}/blog/category`,'POST',categoryObject);
+    }
+
+    static postFetch(address, method ,object){
+        return fetch(address,{
+            method: method,
+            headers: {'Content-Type':'application/json'},
+            body: object
+        })
+    }
+
+    static deleteOneCategory = (id) =>{
+        const address = `${API_ADDRESS}/blog/category/${id}`;
+        return fetch(address,{
+            method:'DELETE'
+        })
     }
 
     static deleteOnePost = (id) =>{
