@@ -89,7 +89,7 @@ export default class AddPost extends React.Component{
     render(){
         return(
           <div>
-            {this.state.postAdded === true ? <Navigate to={"/admin/AllPosts"} replace={true} /> : 
+            {this.state.postAdded === true ? <Navigate to={"/admin/posts"} replace={true} /> : 
             <div className="post-wrapper">
                 <h2>{this.props.post === undefined ? "Nouveau post" : "Modifier post"}</h2>
                     <form onSubmit={this.handleOnSubmit}>

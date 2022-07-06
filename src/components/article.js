@@ -54,6 +54,7 @@ export default class ArticleComponent extends React.Component{
     }
 
     componentDidMount(){
+        console.log('image url: '+this.props.a.imageUrl);
         console.log('called');
     }
 

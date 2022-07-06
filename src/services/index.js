@@ -1,7 +1,5 @@
 const PROTOCOLE = 'https';
-const ADDRESS = 'backend-flax-rho.vercel.app';
-//const ADDRESS = 'localhost:3030';
-//const PORT = '3030';
+const ADDRESS = 'back-end-blog.uc.r.appspot.com';
 const API_ADDRESS = `${PROTOCOLE}://${ADDRESS}`;
 const EXTENSION_CONTENT = "txt";
 const boxes = [
@@ -86,6 +84,9 @@ export default class Service {
                     }
                     builder = builder + result[i];
                 }
+                element = document.createElement('div');
+                element.innerText = builder + '\n';
+                root.append(element);
                 callback(root);
             }
         }

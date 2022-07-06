@@ -19,7 +19,7 @@
 
 .subtitle{
     width: 55%;
-    height: 50%;
+    height: 100%;
     font-family: Poppins;
     font-weight: lighter;
     text-align: center;
@@ -33,7 +33,7 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    gap: 35%;
+    gap: 50%;
 }
 
 
