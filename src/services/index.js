@@ -1,7 +1,6 @@
 const PROTOCOLE = 'https';
 const ADDRESS = 'back-end-blog.uc.r.appspot.com';
 const API_ADDRESS = `${PROTOCOLE}://${ADDRESS}`;
-const EXTENSION_CONTENT = "txt";
 const boxes = [
         {'text':'blog','url':'/blog',},
         {'text':'conntactez-nous','url' : '/conntactez-nous',},
@@ -48,7 +47,7 @@ export default class Service {
     }
     
     static getContent =  async (contentUrl) =>{
-        const content = await Service.getResults(contentUrl+"."+EXTENSION_CONTENT);
+        const content = await Service.getResults(contentUrl);
         const reader = content.body.getReader();
         const dataReader = await reader.read(({done,value})=>{
             if(done){
@@ -62,7 +61,7 @@ export default class Service {
     static getContentXML = (url,callback) =>{
         let rawFile = new XMLHttpRequest();
         rawFile.overrideMimeType("text/plain");
-        rawFile.open("GET",url+"."+EXTENSION_CONTENT,true);
+        rawFile.open("GET",url,true);
         rawFile.onreadystatechange = () =>{
             if(rawFile.readyState === XMLHttpRequest.DONE){
                 let result = rawFile.responseText;
