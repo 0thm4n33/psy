@@ -14,16 +14,10 @@ function ArticlePage(){
     useEffect(()=>{
         async function fecthArticle(){
             const post = await service.getOnePost(title);
-            service.getContent(post.content).then((result)=>{
-                console.log(`result \n ${result}`);
-            }).catch(error =>{
-                console.log(`error : ${error}`)
-            })
-            /*
             service.getContentXML(post.content,(result)=>{
                 let postContent = document.getElementById('post-content');
                 if(postContent !== null) postContent.appendChild(result);
-            })*/
+            })
             post.title = post.title.split('_').join(' ');
             setPost(post);
         }
