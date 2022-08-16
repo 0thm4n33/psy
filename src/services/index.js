@@ -1,5 +1,5 @@
 const PROTOCOLE = 'https';
-const ADDRESS = 'back-end-blog.uc.r.appspot.com';
+const ADDRESS = 'backend-f4gkq4yrr-essaidiothmane0-gmailcom.vercel.app';
 const API_ADDRESS = `${PROTOCOLE}://${ADDRESS}`;
 const boxes = [
         {'text':'blog','url':'/blog',},
@@ -47,6 +47,7 @@ export default class Service {
     }
     
     static getContent =  async (contentUrl) =>{
+        console.log('url: '+contentUrl)
         const content = await Service.getResults(contentUrl);
         const reader = content.body.getReader();
         const dataReader = await reader.read(({done,value})=>{
