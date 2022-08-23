@@ -3,7 +3,7 @@ import Layout from './components/Layout';
 import BlogPage from './pages/Blog';
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
 import AuthenticationPage from './pages/Authentication';
-import ConntactUsPage from './pages/ConnatactUs';
+import ConntactUsPage from './pages/ConntactUsStack/ConntactUs';
 import ArticlePage from './pages/Article';
 import AddPost from './pages/AddPost';
 import RequiredAuth from './components/requiredAuth';

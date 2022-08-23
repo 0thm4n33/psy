@@ -53,15 +53,14 @@ export default class Layout extends React.Component {
     functionalRender = () =>{
         return(
             <div className='root'>
-                <div className="button-panel">
+                <Box sx={{display:{md:'none',xs:'block'}}}>
                     <IconButton 
                         onClick={this.handlerOpen}
                         edge="start"
-                        sx={{display:{lg:'none',md:'block'}}}
                     >
                         <Menu/>
                     </IconButton>
-                </div>
+                </Box>
                     <Box sx={{width:{sm:drawerWidth}}}>
                         <Drawer 
                             variant="permanent"
@@ -76,10 +75,10 @@ export default class Layout extends React.Component {
                             open={this.state.mobileOpen}
                             onClick={this.handlerOpen}
                             sx={{
-                                display:{sm:'none',md:'block',xs:'block'}
+                                display:{sm:'none',md:'none',xs:'block'}
                             }}>
                                 {this.items()}
-                            </Drawer>
+                        </Drawer>
                     </Box>           
                 <div className="page">
                     {this.props.children}

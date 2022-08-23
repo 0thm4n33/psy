@@ -87,7 +87,7 @@ export default class Service {
                 element = document.createElement('div');
                 element.innerText = builder + '\n';
                 root.append(element);
-                callback(root);
+                callback(root); //send result
             }
         }
         rawFile.send(null);
