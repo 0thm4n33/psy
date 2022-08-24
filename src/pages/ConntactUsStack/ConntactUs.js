@@ -10,11 +10,11 @@ export default class ConntactUsPage extends React.Component{
         return(
             <Box style={style.main} sx={{width:{xs:"100%",md:"60%"}}}>
                     <h3>Conntactez-nous</h3>
-                    <Box component={"form"} sx={{fontSize:"10px",color:"#C5C5C",display:'flex',gap:"10px",flexDirection:{xs:"column",md:'row'},flexWrap:{xs:'nowrap',md:'wrap'}}}>
-                        <LabelTextField type={'text'} label={"Nom*"} size={43} />
-                        <LabelTextField type={'text'} label={"Prenom*"} size={43} />
-                        <LabelTextField type={'email'} label={"Email*"} size={91}/>
-                        <LabelTextArea label={"Votre message*"} />
+                    <Box component={"form"} sx={{fontSize:"11px",display:'flex',gap:"10px",flexDirection:{xs:"column",md:'row'},flexWrap:{xs:'nowrap',md:'wrap'}}}>
+                        <LabelTextField type={'text'} label={"Nom *"} size={43} />
+                        <LabelTextField type={'text'} label={"Prenom *"} size={43} />
+                        <LabelTextField type={'email'} label={"Email *"} size={91}/>
+                        <LabelTextArea label={"Votre message *"} />
                         <Box sx={{width:"95%"}}>
                             <ButtonField label={"Envoyer le message"} icon={<Send />}/>
                         </Box>

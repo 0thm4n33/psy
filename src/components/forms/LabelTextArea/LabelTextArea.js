@@ -9,6 +9,7 @@ export default function LabelTextArea({label,row,col}){
         display:"flex",
         flexDirection:"column",
         height:"40%",
+        color:"#C5C5C5"
     }
     return(
         <Box style={style} sx={{width:{xs:"79%",md:"90%"}}}>
